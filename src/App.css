@@ -1,0 +1,88 @@
+/* Hero Section */
+.hero-section {
+  @apply text-center py-20 bg-blue-400 text-white;
+}
+
+.hero-title {
+  @apply text-4xl font-bold mb-4;
+}
+
+.hero-subtitle {
+  @apply text-lg mb-6;
+}
+
+.download-btn {
+  @apply bg-white text-blue-500 font-semibold px-6 py-2 rounded-full shadow hover:bg-gray-100;
+}
+
+/* Section Headings */
+.section-heading {
+  @apply text-2xl font-bold mb-6;
+}
+
+.section-heading-center {
+  @apply text-2xl font-bold text-center mb-10;
+}
+
+/* Cards */
+.skill-card {
+  @apply p-3 text-center font-semibold bg-blue-200 rounded-xl shadow hover:shadow-lg transform transition duration-200 ease-in-out hover:-translate-y-2 hover:scale-105;
+}
+
+.project-card {
+  @apply p-6 bg-blue-200 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-2 hover:scale-105;
+}
+
+.project-btn {
+  @apply inline-block px-4 py-2 border rounded-lg text-blue-500 hover:bg-blue-50;
+}
+
+/* Contact */
+.contact-icons {
+  @apply flex justify-center space-x-6;
+}
+
+/* Footer */
+.footer {
+  @apply text-center py-2 border-t;
+}
+
+.wave-style {
+  display: inline-block;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
