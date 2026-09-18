@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin } from "lucide-react";
+import profilePhoto from "./assets/profile.jpg";
 import "./App.css";
 
 
@@ -14,33 +15,39 @@ export default function App() {
         <nav className="space-x-6">
           <a href="#about" className="hover:text-blue-600 transition ">About</a>
           <a href="#experience" className="hover:text-blue-600 transition ">Experience</a>
-          <a href="#skills" className="hover:text-blue-600 transition " >Skills</a>
           <a href="#projects" className="hover:text-blue-600 transition ">Projects</a>
+          <a href="#skills" className="hover:text-blue-600 transition " >Skills</a>
           <a href="#contact" className="hover:text-blue-600 transition ">Contact</a>
         </nav>
       </header>
 
       {/* Hero Section */}
       <section className="hero-section ">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5 }}
-          className="hero-title"
-        >
-          <h1>
-            Hi{" "}<span className="wave-style">👋</span>{"  "} I'm Saurav Kumar
-          </h1>
-        </motion.h2>
+        <div className="hero-content">
+          <div className="hero-text">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5 }}
+              className="hero-title"
+            >
+              <h1>
+                Hi{" "}<span className="wave-style">👋</span>{"  "} I'm Saurav Kumar
+              </h1>
+            </motion.h2>
 
-        <p className="hero-subtitle">
-          A passionate Software Engineer | Problem Solver| Lifelong Learner
-        </p>
+            <p className="hero-subtitle">
+              A passionate Senior Software Engineer | Problem Solver| Lifelong Learner
+            </p>
 
 
-        <a href="https://drive.google.com/file/d/19U6MZsxJUxxJoDMlz-qKnzKAab77zTUZ/view?usp=sharing" className="download-btn">
-          View My Resume
-        </a>
+            <a href="https://drive.google.com/file/d/1TyzGkbk4w8QEnMTjur1NBdlp_tlT4i4d/view?usp=sharing" className="download-btn">
+              View My Resume
+            </a>
+          </div>
+
+          <img src={profilePhoto} alt="Saurav Kumar" className="profile-photo" />
+        </div>
       </section>
 
       {/* Background */}
@@ -48,25 +55,22 @@ export default function App() {
         <h3 className="section-heading ">Background</h3>
 
         <p className="text-justify mb-2">
-          I'm currently working as a Software Engineer at <span className="font-semibold">Samsung Research, Bangalore </span>
-          specializing in developing solutions for smartphone gallery experience. I have worked on features like
-          stories, scene tag detection from images and face detection in gallery.
-          I obtained my bachelor's in Information Technology
-          from <span className="font-semibold"> National Institute of Technology, Karnataka Surathkal(NIT-K)</span>. During the summer
-          of 2023 I interned from Samsung when I worked on developing solution for creating an automated application utilized for training
-          bookeh effect generation models.
+          I'm currently working as a Senior Software Engineer at <span className="font-semibold">Samsung Research, Bangalore</span>,
+          specializing in developing solutions for the smartphone gallery experience. Before this, I obtained my
+          bachelor's degree in Information Technology from <span className="font-semibold">National Institute of
+          Technology Karnataka, Surathkal</span>. During the summer of 2023, I interned at Samsung.
         </p>
 
         <p className="text-justify mb-2">
-          As a software engineer, I enjoy working on challenging problems particularly in
-          the field of framework and machine learning. My passion involves developing scalable,
-          secure systems, upskilling myself for future driven by the goal of leveraging
+          As a software engineer, I enjoy working on challenging problems, particularly in
+          the fields of frameworks and machine learning. My passion lies in developing scalable,
+          secure systems and upskilling myself for the future, driven by the goal of leveraging
           computer science to bring positive change.
         </p>
 
         <p className="text-justify ">
           <span className="font-semibold">When I'm not in front of a computer screen</span>, I'm usually playing ⚽️,
-          visiting 🏞️ or enjoying with 🤝.
+          visiting 🏞️, or cooking 🧑‍🍳.
         </p>
       </section>
 
@@ -75,84 +79,81 @@ export default function App() {
         <h3 className="section-heading">Experience</h3>
         <p>
           <ul className="list-disc ml-6 space-y-6">
-            <li><span className="font-semibold">Software Engineer</span> – Samsung Research Bangalore (July 2024 - Present)
+            <li><span className="font-semibold">Senior Software Engineer</span> – Samsung Research Bangalore (July 2024 - Present)
               <ul className="list-disc ml-6 space-y-1 mt-1">
-                <li>Working on solutions for Samsung phones gallery features story generation, face detection and clustering, meta data
-                  retrieval from media for enhanced user experience and tag based media search</li>
-                <li>Supported in the unification of separate databases used by multiple services to single database to eliminate redundancy
-                  Assisted in database schema design, refactoring code, query optimization ensuring smooth transition for services</li>
-                <li>Supported feature development for transferring image related meta-data on switching from an old device to new device</li>
-                <li>Developed the feature of applying different AI effcts on cover images of gallery stories based on rule</li>
-                <li>Leverage Android development, Database Management, Java, SQL for development and integration of new features</li>
+                <li><span className="font-semibold">Duplicate Image Detection Enhancement:</span> Improved duplicate-image detection
+                  for memory cleanup by optimizing database query execution and adding rule-based candidate filtering, delivering
+                  200× performance improvement and reducing unnecessary image processing overhead.</li>
+                <li><span className="font-semibold">Document Classification Improvement:</span> Fine-tuned Tiny-BERT for image
+                  document classification, increasing categorization accuracy from 70% to 92%, and built the application layer for
+                  seamless model inference and integration into the document processing pipeline.</li>
+                <li><span className="font-semibold">Pet Face Detection &amp; Clustering:</span> Implemented an end-to-end pet
+                  identification pipeline using BlazeFace model for face detection, followed by face embedding extraction and
+                  clustering to group pets across images; designed database schema and indexing to store pet identities,
+                  embeddings, and image mappings, enabling personalized pet story generation based on individual pet photo
+                  clusters.</li>
+                <li><span className="font-semibold">SmartSwitch:</span> Developed an image metadata migration workflow for
+                  old-to-new device transfers, covering database backup, encryption, secure data transfer, decryption,
+                  validation, and database restoration; added integrity checks and error handling to ensure reliable and
+                  consistent migration.</li>
+                <li>Migrated service queries from an internal database to a standardized database, designed the target schema,
+                  and refactored data-access workflows to simplify legacy database management and improve system
+                  maintainability.</li>
               </ul>
             </li>
-
-
-            <li><span className="font-semibold">Software Engineer Intern</span> – Samsung Research Bangalore (May 2023 - July 2023)
-              <ul className="list-disc ml-6 space-y-1 mt-1">
-                <li>Designed and developed an automated process for generating image datasets, resulting in a 50% reduction in dataset
-                  creation time for training the portrait image creation model on smartphone camera</li>
-                <li>Leveraged Python, OpenCV, and PyQt5 GUI library to create a user-friendly, human-in-the-loop software that
-                  automates image segmentation tasks using SAM image segmenting architecture</li>
-
-              </ul>
-            </li>
-
-
-
-
-
           </ul>
         </p>
       </section>
 
-      {/* Skills */}
-      <section id="skills" className="bg-gray-100 py-14 px-6">
-        <h3 className="section-heading-center">Skills</h3>
-        <div className="grid md:grid-cols-4  gap-4 max-w-4xl mx-auto">
-          {["Android Development", "Machine Learning", "Data Structure", "Database Management", "Design", "OOPs", "JAVA/C++"].map(
-            (skill, i) => (
-              <div key={i} className="skill-card">
-                {skill}
-              </div>
-            )
-          )}
+      {/* Projects */}
+      <section id="projects" className="bg-gray-100 py-14 px-6">
+        <h3 className="section-heading-center">Projects</h3>
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+          <div className="project-card">
+            <h4 className="font-bold mb-2">Event Photo Discovery System</h4>
+            <p className="text-sm mb-1">
+              Built a FastAPI backend for asynchronous image processing, face embedding
+              generation, and face clustering across uploaded event photos. Implemented
+              Qdrant-based vector similarity search with PostgreSQL metadata storage, so
+              users can find their photos from a selfie.
+            </p>
+            <p className="text-sm mb-1">
+              Python, FastAPI, Next.js, InsightFace, Qdrant, PostgreSQL, Supabase, Docker
+            </p>
+            <a href="https://github.com/sauravk21/document-rag-pipeline" className="project-btn">View Details</a>
+          </div>
+
+          <div className="project-card">
+            <h4 className="font-bold mb-2">DocuRAG</h4>
+            <p className="text-sm mb-1">
+              Built a full-stack document Q&amp;A system using Spring Boot, Spring AI, and Llama.
+              Its RAG pipeline uses PDFBox text extraction, semantic chunking, and PGVector
+              cosine similarity search to return grounded answers with page-level source
+              citations. The React front end supports drag-and-drop PDF upload, real-time
+              processing status, and multi-document scoping, and the whole stack is
+              containerized with Docker Compose.
+            </p>
+            <p className="text-sm mb-1">
+              Spring AI, Llama, RAG, Vector DB, PostgreSQL, React
+            </p>
+            <a href="https://github.com/sauravk21/document-rag-pipeline" className="project-btn">View Details</a>
+          </div>
+
+
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="max-w-5xl mx-auto py-14 px-6">
-        <h3 className="section-heading-center">Projects</h3>
-        <div className="grid md:grid-cols-2 gap-6">
-
-          <div className="project-card">
-            <h4 className="font-bold mb-2">Cataract Grading Framework</h4>
-            <p className="text-sm mb-1">
-              Devised a deep learning framework constructed on MobileNetVe2
-              architecture for grading eye cataracts based on severity.
-            </p>
-            <p className="text-sm mb-1">Machine learning, Image Processing, OpenCv, Tensorflow </p>
-            <a href="https://github.com/sauravk21/%20" className="project-btn">View Details</a>
-          </div>
-
-          <div className="project-card">
-            <h4 className="font-bold mb-2">Chat Application</h4>
-            <p className="text-sm mb-1">
-              Developed a chat application for android featuring real-time
-              messaging, user authentication, notification and group chat.
-            </p>
-            <p className="text-sm mb-1">
-              Android Framework, Firebase Database, XML
-            </p>
-            <a href="https://github.com/sauravk21/%20" className="project-btn">View Details</a>
-          </div>
-
-
-        </div>
+      {/* Skills */}
+      <section id="skills" className="py-14 px-6">
+        <h3 className="section-heading-center">Skills</h3>
+        <p className="max-w-4xl mx-auto text-center text-lg leading-relaxed">
+          System Design · Microservices · Distributed Systems · REST API · Concurrency · OOPS · PyTorch · Computer Vision · Generative AI · LangChain · Java · Kotlin · Android · Spring Boot · Python · SQL · FastAPI · Docker · Git · Mockito
+        </p>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="bg-gray-100 py-3 px-6 text-center">
+      <section id="contact" className="bg-gray-100 pt-3 pb-8 px-6 text-center">
         <h3 className="section-heading">Get in touch</h3>
         <p className="mb-6">
           Feel free to reach out if you’d like to collaborate or just say hi!
@@ -169,11 +170,6 @@ export default function App() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="footer bg-gray-100 font-light text-xs text-sm">
-        <p>© {new Date().getFullYear()} [Saurav Kumar]. All rights reserved.</p>
-      </footer>
     </div>
   );
 }
